@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="gradientBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#001a66;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="auroraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff00;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#00ccff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#gradientBg)"/>
+  
+  <!-- Northern Lights (Aurora) -->
+  <path d="M 0 80 Q 100 20, 200 60 T 400 80" fill="none" stroke="url(#auroraGrad)" stroke-width="8" opacity="0.7"/>
+  <path d="M 0 100 Q 100 40, 200 80 T 400 100" fill="none" stroke="url(#auroraGrad)" stroke-width="6" opacity="0.5"/>
+  <path d="M 0 60 Q 100 10, 200 50 T 400 60" fill="none" stroke="url(#auroraGrad)" stroke-width="4" opacity="0.6"/>
+  
+  <!-- Stars -->
+  <circle cx="350" cy="30" r="2" fill="white" opacity="0.8"/>
+  <circle cx="330" cy="20" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="370" cy="45" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="310" cy="35" r="1" fill="white" opacity="0.5"/>
+  
+  <!-- Mountains -->
+  <g transform="translate(100, 140)">
+    <!-- Left mountain -->
+    <polygon points="0,80 40,20 80,80" fill="#ffffff" opacity="0.95"/>
+    <!-- Right mountain -->
+    <polygon points="60,80 110,15 160,80" fill="#ffffff" opacity="0.9"/>
+    <!-- Mountain shadow -->
+    <polygon points="40,80 60,50 80,80" fill="#cccccc" opacity="0.6"/>
+  </g>
+  
+  <!-- Waves -->
+  <g transform="translate(70, 200)" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M 0 0 Q 10 -5, 20 0 T 40 0 T 60 0 T 80 0 T 100 0 T 120 0 T 140 0" />
+    <path d="M 0 12 Q 10 7, 20 12 T 40 12 T 60 12 T 80 12 T 100 12 T 120 12 T 140 12" />
+  </g>
+  
+  <!-- Gear (Industrial element) -->
+  <g transform="translate(280, 160)">
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#ff9900" stroke-width="2"/>
+    <!-- Gear teeth -->
+    <rect x="-4" y="-38" width="8" height="8" fill="#ff9900"/>
+    <rect x="27" y="-13" width="8" height="8" fill="#ff9900" transform="rotate(45 31 -9)"/>
+    <rect x="27" y="13" width="8" height="8" fill="#ff9900" transform="rotate(90 31 17)"/>
+    <rect x="-4" y="30" width="8" height="8" fill="#ff9900" transform="rotate(135 0 34)"/>
+    <rect x="-35" y="13" width="8" height="8" fill="#ff9900" transform="rotate(180 -31 17)"/>
+    <rect x="-35" y="-13" width="8" height="8" fill="#ff9900" transform="rotate(225 -31 -9)"/>
+    <!-- Center hole -->
+    <circle cx="0" cy="0" r="12" fill="url(#gradientBg)"/>
+  </g>
+  
+  <!-- Shine/Sparkle on gear -->
+  <circle cx="300" cy="145" r="8" fill="#ffaa00" opacity="0.6" filter="url(#glow)"/>
+  
+  <!-- Text styling filter -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
