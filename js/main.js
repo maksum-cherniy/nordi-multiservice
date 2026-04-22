@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   setupNavigationHamburger();
   setupLanguageSwitcher();
   setupWhatsAppLinks();
+  setActiveNav();
+  handleHeaderOnScroll();
 });
 
 // Ініціалізація мови
@@ -212,6 +214,35 @@ function initializeMap() {
     // Карта вже вставлена через iframe у HTML
     // Тут можна додати додаткові функції для взаємодії з картою
   }
+}
+
+// Встановити активний пункт навігації згідно шляху
+function setActiveNav() {
+  const links = document.querySelectorAll(".nav-links a");
+  const path = window.location.pathname.split("/").pop() || "index.html";
+  links.forEach((link) => {
+    const href = link.getAttribute("href");
+    const hrefPage = href.split("/").pop();
+    if (href === "#contact" && path === "index.html") {
+      link.classList.add("active");
+    } else if (hrefPage === path) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
+
+// Додає клас до header при скролі (покращує видимість)
+function handleHeaderOnScroll() {
+  const header = document.querySelector("header");
+  if (!header) return;
+  const toggle = () => {
+    if (window.scrollY > 20) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+  };
+  window.addEventListener("scroll", toggle);
+  toggle();
 }
 
 //監聽змін розміру вікна для адаптивності
