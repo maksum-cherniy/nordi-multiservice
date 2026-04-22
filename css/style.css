@@ -280,9 +280,11 @@ h3 {
 }
 
 .about-image img {
-  max-width: 300px;
-  width: 100%;
+  max-width: 260px;
+  width: auto;
   height: auto;
+  display: block;
+  margin: 0 auto;
   filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
 }
 
@@ -359,6 +361,8 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .price {
@@ -378,6 +382,7 @@ h3 {
   border: none;
   cursor: pointer;
   font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
 .order-btn:hover {
