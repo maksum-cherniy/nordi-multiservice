@@ -14,7 +14,7 @@
 <body>
   <!-- HEADER -->
   <header>
-    <nav>
+    <nav class="container">
       <a href="index.html" class="logo">
         <img src="images/logo.svg" alt="NORDI MULTISERVICE Logo" style="height: 50px; width: auto;">
         <span>NORDI</span>
@@ -42,10 +42,12 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-content">
-      <h1 data-translate="welcome">Velkommen til NORDI MULTISERVICE</h1>
-      <p data-translate="hero_subtitle">Profesjonell lasernrengjøring av skipsskrog</p>
-      <a href="#services" class="cta-button" data-translate="services">Tjenester</a>
+    <div class="container">
+      <div class="hero-content">
+        <h1 data-translate="welcome">Velkommen til NORDI MULTISERVICE</h1>
+        <p data-translate="hero_subtitle">Profesjonell lasernrengjøring av skipsskrog</p>
+        <a href="#services" class="cta-button" data-translate="services">Tjenester</a>
+      </div>
     </div>
   </section>
 
@@ -58,7 +60,7 @@
           <p data-translate="about_desc">NORDI MULTISERVICE spesialiserer seg på avansert lasernrengjøring av metallskip og maritim utstyr i Norge. Med over 15 års erfaring leverer vi høyeste kvalitet på rengjøring av skrog, som reduserer vedlikehold og forlenget skipslevetiden.</p>
           <p>Vi bruker den nyeste laserteknologien for å sikre sikkerhet, effektivitet og miljøvennlighet.</p>
         </div>
-        <div>
+        <div class="about-image">
           <img src="images/logo.svg" alt="NORDI MULTISERVICE" style="max-width: 300px; width: 100%; height: auto;">
         </div>
       </div>
@@ -134,27 +136,32 @@
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section" style="background-color: #f3f4f6;">
+  <section id="contact" class="contact-section">
     <div class="container">
       <h2 data-translate="contact_title">Kontakt oss</h2>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-        <div>
+      <div class="contact-grid">
+        <div class="contact-info-section">
           <p data-translate="contact_desc">Trenger du laser rengjøring? Kontakt oss i dag for en gratis konsultasjon.</p>
-          <div class="contact-info" style="margin-top: 2rem;">
-            <strong data-translate="phone">Telefon:</strong> <a href="tel:+4799999999" style="color: var(--primary-color); margin-left: 0.5rem;">+47 99 999 999</a>
-          </div>
-          <div class="contact-info">
-            <strong data-translate="email">E-post:</strong> <a href="mailto:info@nordimultiservice.no" style="color: var(--primary-color); margin-left: 0.5rem;">info@nordimultiservice.no</a>
-          </div>
-          <div class="contact-info">
-            <strong data-translate="address">Adresse:</strong> <span style="margin-left: 0.5rem;">Stavanger, Norway</span>
+          <div class="contact-details">
+            <div class="contact-info">
+              <strong data-translate="phone">Telefon:</strong>
+              <a href="tel:+4799999999" style="color: var(--primary-color); margin-left: 0.5rem;">+47 99 999 999</a>
+            </div>
+            <div class="contact-info">
+              <strong data-translate="email">E-post:</strong>
+              <a href="mailto:info@nordimultiservice.no" style="color: var(--primary-color); margin-left: 0.5rem;">info@nordimultiservice.no</a>
+            </div>
+            <div class="contact-info">
+              <strong data-translate="address">Adresse:</strong>
+              <span style="margin-left: 0.5rem;">Stavanger, Norway</span>
+            </div>
           </div>
         </div>
-        <form onsubmit="sendMessage(event)">
-          <input type="text" name="name" placeholder="Ditt navn" data-translate="your_name" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px;">
-          <input type="email" name="email" placeholder="Din e-post" data-translate="your_email" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px;">
-          <textarea name="message" placeholder="Ditt budskap" data-translate="your_message" rows="4" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 6px; resize: vertical;"></textarea>
-          <button type="submit" class="cta-button" style="width: 100%;" data-translate="send_button">Send</button>
+        <form class="contact-form" onsubmit="sendMessage(event)">
+          <input type="text" name="name" placeholder="Ditt navn" data-translate="your_name" required>
+          <input type="email" name="email" placeholder="Din e-post" data-translate="your_email" required>
+          <textarea name="message" placeholder="Ditt budskap" data-translate="your_message" rows="4" required></textarea>
+          <button type="submit" class="cta-button" data-translate="send_button">Send</button>
         </form>
       </div>
     </div>

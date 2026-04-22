@@ -21,15 +21,17 @@ function setupNavigationHamburger() {
   const navLinks = document.querySelector(".nav-links");
 
   if (hamburger) {
-    hamburger.addEventListener("click", function () {
+    hamburger.addEventListener("click", function (e) {
+      e.preventDefault();
       navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
 
       // Анімація гамбургера
       const spans = hamburger.querySelectorAll("span");
       if (navLinks.classList.contains("active")) {
-        spans[0].style.transform = "rotate(45deg) translateY(10px)";
+        spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
         spans[1].style.opacity = "0";
-        spans[2].style.transform = "rotate(-45deg) translateY(-10px)";
+        spans[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
       } else {
         spans[0].style.transform = "none";
         spans[1].style.opacity = "1";
@@ -41,7 +43,9 @@ function setupNavigationHamburger() {
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", function () {
         navLinks.classList.remove("active");
-        hamburger.querySelectorAll("span").forEach((span) => {
+        hamburger.classList.remove("active");
+        const spans = hamburger.querySelectorAll("span");
+        spans.forEach((span) => {
           span.style.transform = "none";
           span.style.opacity = "1";
         });
