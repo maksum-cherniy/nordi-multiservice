@@ -150,8 +150,23 @@ function sendMessage(event) {
   const message = document.querySelector('[name="message"]')?.value;
 
   if (name && email && message) {
+    // Валідація email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      const currentLang = getSavedLanguage();
+      const alertMsg =
+        currentLang === "no"
+          ? "Vennligst skriv inn en gyldig e-postadresse!"
+          : "Please enter a valid email address!";
+      alert(alertMsg);
+      return;
+    }
+
     const currentLang = getSavedLanguage();
-    const mailtoLink = `mailto:info@nordimultiservice.no?subject=Forespørsel fra ${name}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFra: ${name}%0D%0AE-post: ${email}`;
+    const subject =
+      currentLang === "no" ? `Forespørsel fra ${name}` : `Inquiry from ${name}`;
+    const body = `${message}\n\nFra: ${name}\nE-post: ${email}`;
+    const mailtoLink = `mailto:info@nordimultiservice.no?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
 

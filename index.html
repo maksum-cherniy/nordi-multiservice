@@ -46,7 +46,10 @@
       <div class="hero-content">
         <h1 data-translate="welcome">Velkommen til NORDI MULTISERVICE</h1>
         <p data-translate="hero_subtitle">Profesjonell lasernrengjøring av skipsskrog</p>
-        <a href="#services" class="cta-button" data-translate="services">Tjenester</a>
+        <div class="cta-buttons">
+          <a href="#services" class="btn btn-primary" data-translate="services">Tjenester</a>
+          <a href="#contact" class="btn btn-secondary" data-translate="contact">Kontakt</a>
+        </div>
       </div>
     </div>
   </section>
@@ -139,74 +142,70 @@
   <section id="contact" class="contact-section">
     <div class="container">
       <h2 data-translate="contact_title">Kontakt oss</h2>
-      <div class="contact-grid">
-        <div class="contact-info-section">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3 data-translate="get_in_touch">Kom i kontakt</h3>
           <p data-translate="contact_desc">Trenger du laser rengjøring? Kontakt oss i dag for en gratis konsultasjon.</p>
           <div class="contact-details">
-            <div class="contact-info">
-              <strong data-translate="phone">Telefon:</strong>
-              <a href="tel:+4799999999" style="color: var(--primary-color); margin-left: 0.5rem;">+47 99 999 999</a>
-            </div>
-            <div class="contact-info">
-              <strong data-translate="email">E-post:</strong>
-              <a href="mailto:info@nordimultiservice.no" style="color: var(--primary-color); margin-left: 0.5rem;">info@nordimultiservice.no</a>
-            </div>
-            <div class="contact-info">
-              <strong data-translate="address">Adresse:</strong>
-              <span style="margin-left: 0.5rem;">Stavanger, Norway</span>
-            </div>
+            <p><i class="fas fa-phone"></i> <strong data-translate="phone">Telefon:</strong> <a href="tel:+4799999999">+47 99 999 999</a></p>
+            <p><i class="fas fa-envelope"></i> <strong data-translate="email">E-post:</strong> <a href="mailto:info@nordimultiservice.no">info@nordimultiservice.no</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong data-translate="address">Adresse:</strong> Stavanger, Norway</p>
           </div>
         </div>
         <form class="contact-form" onsubmit="sendMessage(event)">
-          <input type="text" name="name" placeholder="Ditt navn" data-translate="your_name" required>
-          <input type="email" name="email" placeholder="Din e-post" data-translate="your_email" required>
-          <textarea name="message" placeholder="Ditt budskap" data-translate="your_message" rows="4" required></textarea>
-          <button type="submit" class="cta-button" data-translate="send_button">Send</button>
+          <div class="form-group">
+            <label for="name" data-translate="your_name">Ditt navn</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email" data-translate="your_email">Din e-post</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message" data-translate="your_message">Ditt budskap</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn" data-translate="send_button">Send</button>
         </form>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3 data-translate="company_name">NORDI MULTISERVICE</h3>
-        <p>Profesjonell lasernrengjøring av skipsskrog og maritim utstyr i Norge.</p>
-        <div class="social-links">
-          <a href="https://facebook.com/nordimultiservice" target="_blank" class="social-link" title="Facebook">f</a>
-          <a href="https://instagram.com/nordimultiservice" target="_blank" class="social-link" title="Instagram">📷</a>
-          <a href="https://wa.me/4799999999" target="_blank" class="social-link" title="WhatsApp">WhatsApp</a>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 data-translate="company_name">NORDI MULTISERVICE</h3>
+          <p data-translate="footer_desc">Profesjonell lasernrengjøring av skipsskrog og maritim utstyr i Norge.</p>
+          <div class="social-links">
+            <a href="https://facebook.com/nordimultiservice" target="_blank" title="Facebook">📘</a>
+            <a href="https://instagram.com/nordimultiservice" target="_blank" title="Instagram">📷</a>
+            <a href="https://wa.me/4799999999" target="_blank" title="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3 data-translate="location">Vår lokasjon</h3>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2225.9816693847503!2d5.743662!3d58.977149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464232c4c4c4c4c5%3A0x1234567890ab!2sStavanger%2C%20Norway!5e0!3m2!1sno!2sno!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3 data-translate="hours">Åpningstider</h3>
+          <p data-translate="hours_text">24/7 Tilgjengelig for akutte oppdrag</p>
+          <div class="contact-info">
+            <p><i class="fas fa-phone"></i> <strong data-translate="phone">Telefon:</strong> <a href="tel:+4799999999">+47 99 999 999</a></p>
+            <p><i class="fas fa-envelope"></i> <strong data-translate="email">E-post:</strong> <a href="mailto:info@nordimultiservice.no">info@nordimultiservice.no</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong data-translate="address">Adresse:</strong> Stavanger, Norway</p>
+          </div>
         </div>
       </div>
 
-      <div class="footer-section">
-        <h3 data-translate="location">Vår lokasjon</h3>
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2225.9816693847503!2d5.743662!3d58.977149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464232c4c4c4c4c5%3A0x1234567890ab!2sStavanger%2C%20Norway!5e0!3m2!1sno!2sno!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 NORDI MULTISERVICE. All rights reserved.</p>
       </div>
-
-      <div class="footer-section">
-        <h3 data-translate="hours">Åpningstider</h3>
-        <p data-translate="hours_text">24/7 Tilgjengelig for akutte oppdrag</p>
-        <div class="contact-info">
-          <strong data-translate="phone">Telefon:</strong>
-          <a href="tel:+4799999999">+47 99 999 999</a>
-        </div>
-        <div class="contact-info">
-          <strong data-translate="email">E-post:</strong>
-          <a href="mailto:info@nordimultiservice.no">info@nordimultiservice.no</a>
-        </div>
-        <div class="contact-info">
-          <strong data-translate="address">Adresse:</strong>
-          <span>Stavanger, Norway</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2024 NORDI MULTISERVICE. All rights reserved.</p>
     </div>
   </footer>
 
