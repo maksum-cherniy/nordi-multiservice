@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -28,6 +29,9 @@ body {
   color: var(--dark-text);
   background-color: var(--white);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 /* HEADER & NAVIGATION */
