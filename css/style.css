@@ -1,4 +1,4 @@
-/* NORDI MULTISERVICE - Main Stylesheet */
+/* NORDI MULTISERVICE AS - Main Stylesheet */
 
 :root {
   --primary-color: #1e3a8a;
@@ -45,11 +45,16 @@ header {
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+header.scrolled {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -63,11 +68,11 @@ nav {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .logo img {
-  height: 50px;
+  height: 56px;
   width: auto;
 }
 
@@ -76,7 +81,10 @@ nav {
   gap: 2rem;
   align-items: center;
   list-style: none;
+  min-width: 0; /* allow flex children to shrink and avoid overflow */
 }
+
+.nav-links li { min-width: 0; }
 
 .nav-links a {
   text-decoration: none;
@@ -84,7 +92,45 @@ nav {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
-  padding: 0.4rem 0.6rem;
+  padding: 0.5rem 0.8rem;
+}
+
+/* Contact panel styling (homepage) */
+.contact-panel {
+  background-color: var(--white);
+  padding: 1.6rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+
+.contact-lead {
+  font-size: 1.05rem;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  color: var(--dark-text);
+}
+
+.contact-line i {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+}
+
+.contact-line strong {
+  color: var(--accent-color);
+  min-width: 90px;
 }
 
 .nav-links a:hover {
@@ -113,6 +159,32 @@ nav {
 
 .nav-links a.active {
   color: var(--primary-color);
+}
+
+/* Remove underline for Contact link when active on home page */
+.nav-links a[href="#contact"].active::after {
+  width: 0 !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* Keep Contact text neutral on home (no highlight) */
+.nav-links a[href="#contact"].active {
+  color: var(--dark-text) !important;
+  font-weight: 600;
+}
+
+/* Fully neutral Contact when active: no hover/focus accent */
+.nav-links a[href="#contact"].active {
+  color: var(--dark-text) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.nav-links a[href="#contact"].active:hover,
+.nav-links a[href="#contact"].active:focus {
+  color: var(--dark-text) !important;
+  background: transparent !important;
 }
 
 .lang-switcher {
@@ -293,8 +365,8 @@ h3 {
 }
 
 .about-image img {
-  max-width: 260px;
-  width: auto;
+  max-width: 140px;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -494,7 +566,14 @@ h3 {
 
 .social-link:hover {
   background-color: var(--accent-color);
-  transform: rotate(15deg);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.social-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+  transform: translateY(-3px);
 }
 
 /* CONTACT SECTION */
@@ -535,9 +614,9 @@ h3 {
 
 .contact-form {
   background-color: var(--white);
-  padding: 2rem;
+  padding: 2.75rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.10);
 }
 
 .contact-form .form-group {
@@ -547,27 +626,66 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.8rem;
+  padding: 1.05rem 1.15rem;
   margin-bottom: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  font-size: 1rem;
+  border: 1px solid #7a8792;
+  border-radius: 10px;
+  font-size: 1.1rem;
   transition: var(--transition);
+  background-color: #ffffff;
+  color: var(--dark-text);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #6b7280;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  box-shadow: 0 0 0 6px rgba(30, 58, 138, 0.14);
 }
 
 .contact-form textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+/* Submit button styling for contact form */
+.contact-form .submit-btn {
+  display: block;
+  margin-left: auto;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: var(--transition);
+}
+
+.contact-form .submit-btn:hover,
+.contact-form .submit-btn:focus {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.08);
+  outline: none;
 }
 
 /* FOOTER */
@@ -635,10 +753,69 @@ footer {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Footer improvements: spacing, contrast and responsive layout */
+.footer {
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+  gap: 2.5rem;
+}
+
+.footer-section {
+  padding: 0.5rem 0.5rem;
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-section p,
+.footer-section a {
+  color: rgba(255,255,255,0.95);
+  font-size: 1rem;
+}
+
+.footer-section .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section .contact-info a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+}
+
+.footer-section .social-links {
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  font-size: 1.15rem;
+}
+
+/* Responsive footer tweaks */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  .social-links {
+    justify-content: center;
+  }
+  .map-container {
+    height: 220px;
+  }
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   nav {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     position: relative;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -647,6 +824,10 @@ footer {
   .logo {
     order: 1;
     flex: 1;
+  }
+
+  .logo img {
+    height: 48px;
   }
 
   .lang-switcher {
@@ -733,8 +914,7 @@ footer {
   .nav-links a:last-child {
     border-bottom: none;
   }
-  }
-
+ 
   .lang-btn {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
@@ -1052,5 +1232,14 @@ footer {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Fix: ensure before-after images scale properly on small screens */
+@media (max-width: 768px) {
+  .before-after-image img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
   }
 }

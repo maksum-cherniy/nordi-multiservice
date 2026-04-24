@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NORDI MULTISERVICE - Profesjonell lasernrengjøring av skipsskrog i Norge">
+  <meta name="description" content="NORDI MULTISERVICE">
   <meta name="keywords" content="lasernrengjøring, skipsskrog, maritim, rengjøring, Norge">
-  <meta name="author" content="NORDI MULTISERVICE">
-  <title>NORDI MULTISERVICE - Lasernrengjøring av Skipsskrog</title>
+  <meta name="author" content="NORDI MULTISERVICE AS">
+  <title>NORDI MULTISERVICE AS</title>
   
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" href="images/image.png">
 </head>
 <body>
@@ -16,8 +17,11 @@
   <header>
     <nav>
       <a href="index.html" class="logo">
-        <img src="images/image.png" alt="NORDI MULTISERVICE Logo" style="height: 50px; width: auto;">
-        <span>NORDI</span>
+        <picture>
+          <source type="image/webp" srcset="images/image-150w.webp 150w, images/image-300w.webp 300w, images/image@2x.webp 600w" sizes="(max-width:480px) 35px, (max-width:768px) 50px, 60px">
+          <img src="images/image-150w.png" srcset="images/image-150w.png 150w, images/image-300w.png 300w, images/image@2x.png 600w" alt="NORDI MULTISERVICE Logo" loading="lazy">
+        </picture>
+        <span>NORDI MULTISERVICE AS</span>
       </a>
       
       <ul class="nav-links">
@@ -28,15 +32,15 @@
       </ul>
       
       <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="no">Norsk</button>
+        <button class="lang-btn active" data-lang="nb">Norsk</button>
         <button class="lang-btn" data-lang="en">English</button>
       </div>
       
-      <div class="hamburger">
+      <button class="hamburger" type="button" aria-label="Відкрити меню" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </nav>
   </header>
 
@@ -44,12 +48,8 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1 data-translate="welcome">Velkommen til NORDI MULTISERVICE</h1>
+        <h1 data-translate="welcome">Velkommen til NORDI MULTISERVICE AS</h1>
         <p data-translate="hero_subtitle">Profesjonell lasernrengjøring av skipsskrog</p>
-        <div class="cta-buttons">
-          <a href="#services" class="btn btn-primary" data-translate="services">Tjenester</a>
-          <a href="#contact" class="btn btn-secondary" data-translate="contact">Kontakt</a>
-        </div>
       </div>
     </div>
   </section>
@@ -60,12 +60,14 @@
       <h2 data-translate="about_title">Om oss</h2>
       <div class="about-content">
         <div class="about-text">
-          <p data-translate="about_desc">NORDI MULTISERVICE spesialiserer seg på avansert lasernrengjøring av metallskip og maritim utstyr i Norge. Med over 15 års erfaring leverer vi høyeste kvalitet på rengjøring av skrog, som reduserer vedlikehold og forlenget skipslevetiden.</p>
+          <p data-translate="about_desc">NORDI MULTISERVICE AS spesialiserer seg på avansert laserrengjøring av metallskip og maritimt utstyr i Norge. Med over 15 års erfaring leverer vi høy kvalitet på rengjøring av skipskrog som reduserer vedlikehold og forlenger skipets levetid.</p>
           <p>Vi bruker den nyeste laserteknologien for å sikre sikkerhet, effektivitet og miljøvennlighet.</p>
         </div>
         <div class="about-image">
-          <img src="images/image.png" alt="NORDI MULTISERVICE">
-        </div>
+          <picture>
+            <source type="image/webp" srcset="images/image-150w.webp 150w, images/image-300w.webp 300w" sizes="(max-width:480px) 80px, 140px">
+            <img src="images/image-150w.png" srcset="images/image-150w.png 150w, images/image-300w.png 300w" alt="Lasernrengjøring av skipsskrog" loading="lazy">
+          </picture>
       </div>
     </div>
   </section>
@@ -103,9 +105,9 @@
           <h3 data-translate="service_1_title">Skipsskrog Rengjøring</h3>
           <p data-translate="service_1_desc">Dypt rengjøring av marineskrog ved hjelp av laserteknologi. Fjerner rust, alger og biologisk begroeing effektivt.</p>
           <div class="service-price">
-            <span class="price" data-translate="service_1_price">Fra 50 000 NOK</span>
-            <a href="pages/services.html" class="order-btn" data-translate="order_button">Bestill på WhatsApp</a>
-          </div>
+              <span class="price" data-translate="service_1_price">Fra 50 000 NOK</span>
+              <a href="pages/services.html" class="order-btn" data-translate="order_button">Обрати послугу</a>
+            </div>
         </div>
 
         <div class="service-card">
@@ -113,7 +115,7 @@
           <p data-translate="service_2_desc">Rengjøring av metallkonstruksjoner, stål og andre maritime strukturer.</p>
           <div class="service-price">
             <span class="price" data-translate="service_2_price">Fra 25 000 NOK</span>
-            <a href="pages/services.html" class="order-btn" data-translate="order_button">Bestill på WhatsApp</a>
+            <a href="pages/services.html" class="order-btn" data-translate="order_button">Gjennomgå</a>
           </div>
         </div>
 
@@ -122,7 +124,7 @@
           <p data-translate="service_3_desc">Regelmessig inspeksjon og vedlikehold av marineutstyr for optimal ytelse.</p>
           <div class="service-price">
             <span class="price" data-translate="service_3_price">Fra 15 000 NOK</span>
-            <a href="pages/services.html" class="order-btn" data-translate="order_button">Bestill på WhatsApp</a>
+            <a href="pages/services.html" class="order-btn" data-translate="order_button">Gjennomgå</a>
           </div>
         </div>
 
@@ -131,7 +133,7 @@
           <p data-translate="service_4_desc">Tilpassede løsninger for unike maritime utfordringer.</p>
           <div class="service-price">
             <span class="price" data-translate="service_4_price">Etter anbudsbetingelser</span>
-            <a href="pages/services.html" class="order-btn" data-translate="order_button">Bestill på WhatsApp</a>
+            <a href="pages/services.html" class="order-btn" data-translate="order_button">Gjennomgå</a>
           </div>
         </div>
       </div>
@@ -143,15 +145,15 @@
     <div class="container">
       <h2 data-translate="contact_title">Kontakt oss</h2>
       <div class="contact-content">
-        <div class="contact-info">
-          <h3 data-translate="get_in_touch">Kom i kontakt</h3>
-          <p data-translate="contact_desc">Trenger du laser rengjøring? Kontakt oss i dag for en gratis konsultasjon.</p>
-          <div class="contact-details">
-            <p><i class="fas fa-phone"></i> <strong data-translate="phone">Telefon:</strong> <a href="tel:+4799999999">+47 99 999 999</a></p>
-            <p><i class="fas fa-envelope"></i> <strong data-translate="email">E-post:</strong> <a href="mailto:info@nordimultiservice.no">info@nordimultiservice.no</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> <strong data-translate="address">Adresse:</strong> Stavanger, Norway</p>
+        <div class="contact-panel">
+            <p data-translate="contact_desc" class="contact-lead">Trenger du laser rengjøring? Kontakt oss i dag for en gratis konsultasjon.</p>
+            <div class="contact-details">
+              <p class="contact-line"><i class="fas fa-phone"></i> <strong data-translate="phone">Telefon:</strong> <a href="tel:+4797640405">+47 97 64 04 05</a></p>
+              <p class="contact-line"><i class="fas fa-phone"></i> <strong>Telefon 2:</strong> <a href="tel:+4793926442">+47 93 92 64 42</a></p>
+              <p class="contact-line"><i class="fas fa-envelope"></i> <strong data-translate="email">E-post:</strong> <a href="mailto:nordimultiservise@gmail.com">nordimultiservise@gmail.com</a></p>
+              <p class="contact-line"><i class="fas fa-map-marker-alt"></i> <strong data-translate="address">Adresse:</strong> BÅTSFJORD 9990<br>MELLOMVEGEN 11<br>NORWAY</p>
+            </div>
           </div>
-        </div>
         <form class="contact-form" onsubmit="sendMessage(event)">
           <div class="form-group">
             <label for="name" data-translate="your_name">Ditt navn</label>
@@ -175,13 +177,15 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-section">
-          <h3 data-translate="company_name">NORDI MULTISERVICE</h3>
-          <p data-translate="footer_desc">Profesjonell lasernrengjøring av skipsskrog og maritim utstyr i Norge.</p>
+            <div class="footer-section">
+          <h3 data-translate="company_name">NORDI MULTISERVICE AS</h3>
+          <p data-translate="footer_desc">Profesjonell laserrengjøring av skipskrog og maritimt utstyr i NORWAY.</p>
           <div class="social-links">
-            <a href="https://facebook.com/nordimultiservice" target="_blank" class="social-link" title="Facebook">📘</a>
-            <a href="https://instagram.com/nordimultiservice" target="_blank" class="social-link" title="Instagram">📷</a>
-            <a href="https://wa.me/4799999999" target="_blank" class="social-link" title="WhatsApp">💬</a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com/nordimultiservice" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/nordimultiservice" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/4797640405" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -196,20 +200,21 @@
           <h3 data-translate="hours">Åpningstider</h3>
           <p data-translate="hours_text">24/7 Tilgjengelig for akutte oppdrag</p>
           <div class="contact-info">
-            <p><i class="fas fa-phone"></i> <strong data-translate="phone">Telefon:</strong> <a href="tel:+4799999999">+47 99 999 999</a></p>
-            <p><i class="fas fa-envelope"></i> <strong data-translate="email">E-post:</strong> <a href="mailto:info@nordimultiservice.no">info@nordimultiservice.no</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> <strong data-translate="address">Adresse:</strong> Stavanger, Norway</p>
+            <p><i class="fas fa-phone"></i> <strong data-translate="phone">Telefon:</strong> <a href="tel:+4797640405">+47 97 64 04 05</a></p>
+            <p><i class="fas fa-phone"></i> <strong>Telefon 2:</strong> <a href="tel:+4793926442">+47 93 92 64 42</a></p>
+            <p><i class="fas fa-envelope"></i> <strong data-translate="email">E-post:</strong> <a href="mailto:nordimultiservise@gmail.com">nordimultiservise@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong data-translate="address">Adresse:</strong> BÅTSFJORD 9990, MELLOMVEGEN 11, NORWAY</p>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2024 NORDI MULTISERVICE. All rights reserved.</p>
+        <p>&copy; 2024 NORDI MULTISERVICE AS. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/translations.js?v=2"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

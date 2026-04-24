@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NORDI MULTISERVICE - Отзывы клиентов и примеры работ">
-  <title>Відгуки - NORDI MULTISERVICE</title>
+  <meta name="description" content="NORDI MULTISERVICE - Kundereferanser og eksempler">
+  <title>Відгуки - NORDI MULTISERVICE AS</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" href="../images/image.png">
 </head>
 <body>
@@ -13,8 +14,11 @@
   <header>
     <nav>
       <a href="../index.html" class="logo">
-        <img src="../images/image.png" alt="NORDI MULTISERVICE Logo" style="height: 50px; width: auto;">
-        <span>NORDI</span>
+        <picture>
+          <source type="image/webp" srcset="../images/image-150w.webp 150w, ../images/image-300w.webp 300w, ../images/image@2x.webp 600w" sizes="(max-width:480px) 35px, (max-width:768px) 50px, 60px">
+          <img src="../images/image-150w.png" srcset="../images/image-150w.png 150w, ../images/image-300w.png 300w, ../images/image@2x.png 600w" alt="NORDI MULTISERVICE Logo" loading="lazy">
+        </picture>
+        <span>NORDI MULTISERVICE AS</span>
       </a>
       
       <ul class="nav-links">
@@ -25,15 +29,15 @@
       </ul>
       
       <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="no">Norsk</button>
+        <button class="lang-btn active" data-lang="nb">Norsk</button>
         <button class="lang-btn" data-lang="en">English</button>
       </div>
       
-      <div class="hamburger">
+      <button class="hamburger" type="button" aria-label="Відкрити меню" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </nav>
   </header>
 
@@ -65,9 +69,11 @@
             <h3 data-translate="review_1_title">Skipsskrog Rengjøring - Cargo Vessel</h3>
             <p data-translate="review_1_desc">Vellykket rengjøring av skipsskrog som hadde omfattende rustdannelse og biologisk begroeing. Resultatet overgikk kundens forventninger.</p>
             <div class="social-links">
-              <a href="https://facebook.com/nordimultiservice" target="_blank" class="social-link" title="Dele på Facebook">f</a>
-              <a href="https://instagram.com/nordimultiservice" target="_blank" class="social-link" title="Dele på Instagram">📷</a>
-              <a href="https://wa.me/4799999999" target="_blank" class="social-link" title="Del på WhatsApp">💬</a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://facebook.com/nordimultiservice" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com/nordimultiservice" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/4797640405" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
@@ -90,7 +96,7 @@
             <div class="social-links">
               <a href="https://facebook.com/nordimultiservice" target="_blank" class="social-link" title="Dele på Facebook">f</a>
               <a href="https://instagram.com/nordimultiservice" target="_blank" class="social-link" title="Dele på Instagram">📷</a>
-              <a href="https://wa.me/4799999999" target="_blank" class="social-link" title="Del på WhatsApp">💬</a>
+                <a href="https://wa.me/4797640405" target="_blank" class="social-link" title="Del på WhatsApp">💬</a>
             </div>
           </div>
         </div>
@@ -105,7 +111,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
         <div style="background-color: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
           <div style="color: #f59e0b; margin-bottom: 0.5rem;">★★★★★</div>
-          <p style="margin-bottom: 1rem; color: #6b7280;">"Fantastisk arbeid! Skipet ser helt nytt ut. Anbefaler NORDI MULTISERVICE til alle skipsoperatører."</p>
+          <p style="margin-bottom: 1rem; color: #6b7280;">"Fantastisk arbeid! Skipet ser helt nytt ut. Anbefaler NORDI MULTISERVICE AS til alle skipsoperatører."</p>
           <strong style="color: #1e3a8a;">Kaptein Ole Hansen</strong>
           <p style="font-size: 0.9rem; color: #6b7280;">Stavanger Shipping AS</p>
         </div>
@@ -165,12 +171,12 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 data-translate="company_name">NORDI MULTISERVICE</h3>
-        <p>Profesjonell lasernrengjøring av skipsskrog og maritim utstyr i Norge.</p>
+        <h3 data-translate="company_name">NORDI MULTISERVICE AS</h3>
+        <p>Profesjonell laserrengjøring av skipskrog og maritimt utstyr i NORWAY.</p>
         <div class="social-links">
           <a href="https://facebook.com/nordimultiservice" target="_blank" class="social-link" title="Facebook">f</a>
           <a href="https://instagram.com/nordimultiservice" target="_blank" class="social-link" title="Instagram">📷</a>
-          <a href="https://wa.me/4799999999" target="_blank" class="social-link" title="WhatsApp">💬</a>
+          <a href="https://wa.me/4797640405" target="_blank" class="social-link" title="WhatsApp">💬</a>
         </div>
       </div>
 
@@ -179,7 +185,11 @@
         <p data-translate="hours_text">24/7 Tilgjengelig for akutte oppdrag</p>
         <div class="contact-info">
           <strong>Telefon:</strong>
-          <a href="tel:+4799999999">+47 99 999 999</a>
+          <a href="tel:+4797640405">+47 97 64 04 05</a>
+        </div>
+        <div class="contact-info">
+          <strong>Telefon 2:</strong>
+          <a href="tel:+4793926442">+47 93 92 64 42</a>
         </div>
       </div>
 
@@ -187,21 +197,21 @@
         <h3 data-translate="contact">Kontakt</h3>
         <div class="contact-info">
           <strong>E-post:</strong>
-          <a href="mailto:info@nordimultiservice.no">info@nordimultiservice.no</a>
+          <a href="mailto:nordimultiservise@gmail.com">nordimultiservise@gmail.com</a>
         </div>
         <div class="contact-info">
           <strong data-translate="address">Adresse:</strong>
-          <span>Stavanger, Norway</span>
+          <span>BÅTSFJORD 9990, MELLOMVEGEN 11, NORWAY</span>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2024 NORDI MULTISERVICE. All rights reserved.</p>
+      <p>&copy; 2024 NORDI MULTISERVICE AS. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="../js/translations.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="../js/translations.js?v=2"></script>
+  <script src="../js/main.js?v=2"></script>
 </body>
 </html>

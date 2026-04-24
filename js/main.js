@@ -1,4 +1,4 @@
-// NORDI MULTISERVICE - Main JavaScript
+// NORDI MULTISERVICE AS - Main JavaScript
 
 // Ініціалізація при завантаженні сторінки
 document.addEventListener("DOMContentLoaded", function () {
@@ -21,12 +21,19 @@ function initLanguage() {
 function setupNavigationHamburger() {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
-
   if (hamburger) {
+    // ensure initial accessibility state
+    hamburger.setAttribute("aria-expanded", "false");
     hamburger.addEventListener("click", function (e) {
       e.preventDefault();
       navLinks.classList.toggle("active");
       hamburger.classList.toggle("active");
+
+      // update aria state for screen readers
+      hamburger.setAttribute(
+        "aria-expanded",
+        navLinks.classList.contains("active") ? "true" : "false",
+      );
 
       // Анімація гамбургера
       const spans = hamburger.querySelectorAll("span");
@@ -46,6 +53,7 @@ function setupNavigationHamburger() {
       link.addEventListener("click", function () {
         navLinks.classList.remove("active");
         hamburger.classList.remove("active");
+        if (hamburger) hamburger.setAttribute("aria-expanded", "false");
         const spans = hamburger.querySelectorAll("span");
         spans.forEach((span) => {
           span.style.transform = "none";
@@ -83,7 +91,7 @@ function updateLanguageButtons(activeLanguage) {
 
 // Налаштування WhatsApp посилань
 function setupWhatsAppLinks() {
-  const whatsappNumber = "+4799999999"; // Замініть на реальний номер
+  const whatsappNumber = "4797640405"; // Основний WhatsApp-nummer (uten +)
   const whatsappButtons = document.querySelectorAll(
     ".whatsapp-btn, .order-btn",
   );
@@ -96,10 +104,10 @@ function setupWhatsAppLinks() {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
 
-        const serviceName = this.getAttribute("data-service") || "Консультація";
+        const serviceName = this.getAttribute("data-service") || "Konsultasjon";
         const currentLang = getSavedLanguage();
         const message = encodeURIComponent(
-          currentLang === "no"
+          currentLang === "nb"
             ? `Hei! Jeg ønsker å høre mer om: ${serviceName}`
             : `Hi! I want to know more about: ${serviceName}`,
         );
@@ -157,7 +165,7 @@ function sendMessage(event) {
     if (!emailRegex.test(email)) {
       const currentLang = getSavedLanguage();
       const alertMsg =
-        currentLang === "no"
+        currentLang === "nb"
           ? "Vennligst skriv inn en gyldig e-postadresse!"
           : "Please enter a valid email address!";
       alert(alertMsg);
@@ -166,9 +174,9 @@ function sendMessage(event) {
 
     const currentLang = getSavedLanguage();
     const subject =
-      currentLang === "no" ? `Forespørsel fra ${name}` : `Inquiry from ${name}`;
+      currentLang === "nb" ? `Forespørsel fra ${name}` : `Inquiry from ${name}`;
     const body = `${message}\n\nFra: ${name}\nE-post: ${email}`;
-    const mailtoLink = `mailto:info@nordimultiservice.no?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:nordimultiservise@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
 
@@ -177,7 +185,7 @@ function sendMessage(event) {
   } else {
     const currentLang = getSavedLanguage();
     const alertMsg =
-      currentLang === "no"
+      currentLang === "nb"
         ? "Vennligst fyll ut alle feltene!"
         : "Please fill out all fields!";
     alert(alertMsg);
@@ -267,6 +275,7 @@ document.addEventListener("click", function (e) {
         span.style.transform = "none";
         span.style.opacity = "1";
       });
+      if (hamburger) hamburger.setAttribute("aria-expanded", "false");
     }
   }
 });

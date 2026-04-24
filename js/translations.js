@@ -1,6 +1,6 @@
 // Мовні переклади
 const translations = {
-  no: {
+  nb: {
     // Header
     services: "Tjenester",
     reviews: "Anmeldelser",
@@ -8,14 +8,14 @@ const translations = {
     language: "Språk",
 
     // Home
-    welcome: "Velkommen til NORDI MULTISERVICE",
-    hero_subtitle: "Profesjonell lasernrengjøring av skipsskrog",
+    welcome: "Velkommen til NORDI MULTISERVICE AS",
+    hero_subtitle: "Profesjonell laserrengjøring av skipskrog",
     about_title: "Om oss",
     about_desc:
-      "NORDI MULTISERVICE spesialiserer seg på avansert lasernrengjøring av metallskip og maritim utstyr i Norge. Med over 15 års erfaring leverer vi høyeste kvalitet på rengjøring av skrog, som reduserer vedlikehold og forlenget skipslevetiden.",
+      "NORDI MULTISERVICE AS spesialiserer seg på avansert laserrengjøring av metallskip og maritimt utstyr i Norge. Med over 15 års erfaring leverer vi høy kvalitet på rengjøring av skipskrog som reduserer vedlikehold og forlenger skipets levetid.",
     why_us: "Hvorfor velge oss?",
     efficiency: "Effektivitet",
-    efficiency_desc: "Rask og presis lasernrengjøring uten kjemikalier",
+    efficiency_desc: "Rask og presis laserrengjøring uten kjemikalier",
     eco_friendly: "Miljøvennlig",
     eco_friendly_desc: "100% sikker og null kjemisk avfall",
     professional: "Profesjonelt",
@@ -23,9 +23,9 @@ const translations = {
 
     // Services
     services_title: "Våre tjenester",
-    service_1_title: "Skipsskrog Rengjøring",
+    service_1_title: "Skipskrogrengjøring",
     service_1_desc:
-      "Dypt rengjøring av marineskrog ved hjelp av laserteknologi. Fjerner rust, alger og biologisk begroeing effektivt.",
+      "Dyp rengjøring av skipskrog ved hjelp av laserteknologi. Fjerner rust, alger og biologisk begroing effektivt.",
     service_1_price: "Fra 50 000 NOK",
 
     service_2_title: "Metalloverflate Rengjøring",
@@ -42,7 +42,7 @@ const translations = {
     service_4_desc: "Tilpassede løsninger for unike maritime utfordringer.",
     service_4_price: "Etter anbudsbetingelser",
 
-    order_button: "Bestill på WhatsApp",
+    order_button: "Velg tjeneste",
 
     // Reviews
     reviews_title: "Kundetilfredsstillelse",
@@ -58,7 +58,7 @@ const translations = {
       "Profesjonell lasernrengjøring av metalldeler på oljeplattform. Arbeidet fullført uten nedetid.",
 
     // Footer
-    company_name: "NORDI MULTISERVICE",
+    company_name: "NORDI MULTISERVICE AS",
     address: "Adresse",
     phone: "Telefon",
     email: "E-post",
@@ -70,7 +70,7 @@ const translations = {
     // Contact
     contact_title: "Kontakt oss",
     contact_desc:
-      "Trenger du laser rengjøring? Kontakt oss i dag for en gratis konsultasjon.",
+      "Trenger du laserrengjøring? Kontakt oss i dag for en gratis konsultasjon.",
     your_name: "Ditt navn",
     your_email: "Din e-post",
     your_message: "Ditt budskap",
@@ -88,7 +88,7 @@ const translations = {
     language: "Language",
 
     // Home
-    welcome: "Welcome to NORDI MULTISERVICE",
+    welcome: "Welcome to NORDI MULTISERVICE AS",
     hero_subtitle: "Professional Laser Cleaning of Ship Hulls",
     about_title: "About Us",
     about_desc:
@@ -122,7 +122,7 @@ const translations = {
     service_4_desc: "Custom solutions for unique maritime challenges.",
     service_4_price: "Upon quotation",
 
-    order_button: "Order on WhatsApp",
+    order_button: "Choose service",
 
     // Reviews
     reviews_title: "Customer Satisfaction",
@@ -138,7 +138,7 @@ const translations = {
       "Professional laser cleaning of metal parts on oil platform. Work completed without downtime.",
 
     // Footer
-    company_name: "NORDI MULTISERVICE",
+    company_name: "NORDI MULTISERVICE AS",
     address: "Address",
     phone: "Phone",
     email: "Email",
@@ -163,7 +163,7 @@ const translations = {
 };
 
 // Функція для отримання перекладу
-function getTranslation(key, lang = "no") {
+function getTranslation(key, lang = "nb") {
   return translations[lang]?.[key] || key;
 }
 
@@ -180,5 +180,7 @@ function translatePage(lang) {
 
 // Отримати збережену мову
 function getSavedLanguage() {
-  return localStorage.getItem("selectedLanguage") || "no";
+  const stored = localStorage.getItem("selectedLanguage") || "nb";
+  if (stored === "no") return "nb";
+  return stored;
 }

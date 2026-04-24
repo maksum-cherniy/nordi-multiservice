@@ -1,4 +1,4 @@
-# NORDI MULTISERVICE - Website
+# NORDI MULTISERVICE AS - Website
 
 Професійний вебсайт для компанії NORDI MULTISERVICE, яка спеціалізується на лазерному очищенню металу кораблів у Норвегії.
 
@@ -109,10 +109,10 @@ live-server
 
 Оновити в `index.html` та інших файлах:
 
-- Телефон: `+4799999999` → ваш номер
-- Email: `info@nordimultiservice.no` → ваша пошта
-- Адреса: `Stavanger, Norway` → ваша адреса
-- WhatsApp номер: змініти в `js/main.js`
+- Telefon: `+4797640405` (primær) / `+4793926442` (sekundær)
+- Email: `nordimultiservise@gmail.com`
+- Adresse: `BÅTSFJORD 9990, MELLOMVEGEN 11, NORWAY`
+- WhatsApp nummer: 4797640405 (endre i `js/main.js` eller innebygde skript)
 
 ### Додання фото "до/після"
 
@@ -179,12 +179,12 @@ live-server
 
 Для будь-яких питань щодо налаштування сайту, звертайтеся:
 
-- **Email**: support@nordimultiservice.no
-- **Phone**: +47 99 999 999
+- **Email**: nordimultiservise@gmail.com
+- **Phone**: +47 97 64 04 05
 
 ## 📄 Ліцензія
 
-© 2024 NORDI MULTISERVICE. All rights reserved.
+© 2024 NORDI MULTISERVICE AS. All rights reserved.
 
 ---
 
