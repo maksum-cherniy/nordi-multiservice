@@ -1,0 +1,28 @@
+{
+  "name": "NORDI MULTISERVICE AS",
+  "short_name": "NORDI",
+  "description": "Professional laser cleaning of ship hulls and maritime equipment in Norway.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "images/image-150w.png",
+      "sizes": "150x145",
+      "type": "image/png"
+    },
+    {
+      "src": "images/image-300w.png",
+      "sizes": "300x290",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
