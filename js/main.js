@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupWhatsAppLinks();
   setActiveNav();
   handleHeaderOnScroll();
+  window.addEventListener("hashchange", setActiveNav);
 });
 
 // Ініціалізація мови
@@ -21,7 +22,7 @@ function initLanguage() {
 function setupNavigationHamburger() {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
-  if (hamburger) {
+  if (hamburger && navLinks) {
     // ensure initial accessibility state
     hamburger.setAttribute("aria-expanded", "false");
     hamburger.addEventListener("click", function (e) {
@@ -34,18 +35,6 @@ function setupNavigationHamburger() {
         "aria-expanded",
         navLinks.classList.contains("active") ? "true" : "false",
       );
-
-      // Анімація гамбургера
-      const spans = hamburger.querySelectorAll("span");
-      if (navLinks.classList.contains("active")) {
-        spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
-        spans[1].style.opacity = "0";
-        spans[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
-      } else {
-        spans[0].style.transform = "none";
-        spans[1].style.opacity = "1";
-        spans[2].style.transform = "none";
-      }
     });
 
     // Закриття меню при кліку на посилання
@@ -54,11 +43,6 @@ function setupNavigationHamburger() {
         navLinks.classList.remove("active");
         hamburger.classList.remove("active");
         if (hamburger) hamburger.setAttribute("aria-expanded", "false");
-        const spans = hamburger.querySelectorAll("span");
-        spans.forEach((span) => {
-          span.style.transform = "none";
-          span.style.opacity = "1";
-        });
       });
     });
   }
@@ -91,33 +75,39 @@ function updateLanguageButtons(activeLanguage) {
 
 // Налаштування WhatsApp посилань
 function setupWhatsAppLinks() {
-  const whatsappNumber = "4797640405"; // Основний WhatsApp-nummer (uten +)
   const whatsappButtons = document.querySelectorAll(
-    ".whatsapp-btn, .order-btn",
+    ".whatsapp-btn, .service-contact-btn, a[href*='wa.me']",
   );
 
   whatsappButtons.forEach((btn) => {
-    if (
-      btn.classList.contains("whatsapp-btn") ||
-      btn.getAttribute("href")?.includes("whatsapp")
-    ) {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
+    btn.addEventListener("click", function (e) {
+      const serviceName = this.getAttribute("data-service");
+      const isPlainSocialLink =
+        this.tagName === "A" &&
+        !serviceName &&
+        !this.classList.contains("whatsapp-btn") &&
+        !this.classList.contains("service-contact-btn");
+      if (isPlainSocialLink) return;
 
-        const serviceName = this.getAttribute("data-service") || "Konsultasjon";
-        const currentLang = getSavedLanguage();
-        const message = encodeURIComponent(
-          currentLang === "nb"
-            ? `Hei! Jeg ønsker å høre mer om: ${serviceName}`
-            : `Hi! I want to know more about: ${serviceName}`,
-        );
-
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
-        window.open(whatsappUrl, "_blank");
-      });
-    }
+      e.preventDefault();
+      contactWhatsApp(serviceName || "Konsultasjon");
+    });
   });
 }
+
+function contactWhatsApp(serviceName = "Konsultasjon") {
+  const whatsappNumber = "4797640405";
+  const currentLang = getSavedLanguage();
+  const message = encodeURIComponent(
+    currentLang === "nb"
+      ? `Hei! Jeg ønsker å høre mer om: ${serviceName}`
+      : `Hi! I want to know more about: ${serviceName}`,
+  );
+
+  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+}
+
+window.contactWhatsApp = contactWhatsApp;
 
 // Smooth scroll для анкорних посилань
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -128,6 +118,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({ behavior: "smooth" });
+        history.pushState(null, "", href);
+        setActiveNav();
       }
     }
   });
@@ -228,16 +220,28 @@ function initializeMap() {
 function setActiveNav() {
   const links = document.querySelectorAll(".nav-links a");
   const path = window.location.pathname.split("/").pop() || "index.html";
+  const isHome = path === "index.html" || path === "";
+  const hash = window.location.hash;
+
   links.forEach((link) => {
     const href = link.getAttribute("href");
-    const hrefPage = href.split("/").pop();
-    if (href === "#contact" && path === "index.html") {
-      link.classList.add("active");
-    } else if (hrefPage === path) {
-      link.classList.add("active");
+    const hrefWithoutHash = href.split("#")[0];
+    const hrefPage = hrefWithoutHash.split("/").pop() || "index.html";
+    let isActive = false;
+
+    if (href === "#contact") {
+      isActive = isHome && hash === "#contact";
+    } else if (href.includes("#contact")) {
+      isActive = false;
+    } else if (isHome && hrefPage === "index.html") {
+      isActive = hash !== "#contact";
     } else {
-      link.classList.remove("active");
+      isActive = hrefPage === path;
     }
+
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
   });
 }
 
@@ -268,13 +272,10 @@ document.addEventListener("click", function (e) {
   const navLinks = document.querySelector(".nav-links");
   const hamburger = document.querySelector(".hamburger");
 
-  if (navLinks && navLinks.classList.contains("active")) {
+  if (navLinks && hamburger && navLinks.classList.contains("active")) {
     if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
       navLinks.classList.remove("active");
-      hamburger.querySelectorAll("span").forEach((span) => {
-        span.style.transform = "none";
-        span.style.opacity = "1";
-      });
+      hamburger.classList.remove("active");
       if (hamburger) hamburger.setAttribute("aria-expanded", "false");
     }
   }

@@ -184,8 +184,8 @@ live-server
 
 ## 📄 Ліцензія
 
-© 2024 NORDI MULTISERVICE AS. All rights reserved.
+© 2026 NORDI MULTISERVICE AS. All rights reserved.
 
 ---
 
-**Остання оновлення**: 23 квітня 2026 р.
+**Останнє оновлення**: 1 травня 2026 р.
