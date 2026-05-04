@@ -110,8 +110,8 @@ live-server
 Оновити в `index.html` та інших файлах:
 
 - Telefon: `+4797640405` (primær) / `+4793926442` (sekundær)
-- Email: `nordimultiservise@gmail.com`
-- Adresse: `BÅTSFJORD 9990, MELLOMVEGEN 11, NORWAY`
+- Email: `nordimultiservice@gmail.com`
+- Adresse: `NORGE, FINNMARK, BÅTSFJORD 9990, MELLOMVEGEN 11`
 - WhatsApp nummer: 4797640405 (endre i `js/main.js` eller innebygde skript)
 
 ### Додання фото "до/після"
@@ -179,7 +179,7 @@ live-server
 
 Для будь-яких питань щодо налаштування сайту, звертайтеся:
 
-- **Email**: nordimultiservise@gmail.com
+- **Email**: nordimultiservice@gmail.com
 - **Phone**: +47 97 64 04 05
 
 ## 📄 Ліцензія

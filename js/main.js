@@ -168,7 +168,7 @@ function sendMessage(event) {
     const subject =
       currentLang === "nb" ? `Forespørsel fra ${name}` : `Inquiry from ${name}`;
     const body = `${message}\n\nFra: ${name}\nE-post: ${email}`;
-    const mailtoLink = `mailto:nordimultiservise@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:nordimultiservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
 
